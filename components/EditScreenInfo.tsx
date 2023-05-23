@@ -1,49 +1,31 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-
+import { Image } from "native-base";
 import Colors from "constants/Colors";
 import { ExternalLink } from "./ExternalLink";
-import { MonoText } from "./StyledText";
 import { Text, View } from "./Themed";
 
 export default function EditScreenInfo({ path }: { path: string }) {
+  const logo = require("assets/images/favicon.png");
   return (
     <View>
       <View style={styles.getStartedContainer}>
-        <Text
-          style={styles.getStartedText}
-          lightColor="rgba(0,0,0,0.8)"
-          darkColor="rgba(255,255,255,0.8)"
-        >
-          Open up the code for this screen:
-        </Text>
-
-        <View
-          style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
-          darkColor="rgba(255,255,255,0.05)"
-          lightColor="rgba(0,0,0,0.05)"
-        >
-          <MonoText>{path}</MonoText>
+        <View>
+          <Image source={logo} alt={"logo"} size={"sm"} />
         </View>
-
         <Text
           style={styles.getStartedText}
           lightColor="rgba(0,0,0,0.8)"
           darkColor="rgba(255,255,255,0.8)"
         >
-          Change any of the text, save the file, and your app will automatically
-          update.
+          Your app will automatically update.
         </Text>
       </View>
 
       <View style={styles.helpContainer}>
-        <ExternalLink
-          style={styles.helpLink}
-          href="https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet"
-        >
+        <ExternalLink style={styles.helpLink} href="https://majad.xyz">
           <Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
-            Tap here if your app doesn't automatically update after making
-            changes
+            Developer Website
           </Text>
         </ExternalLink>
       </View>

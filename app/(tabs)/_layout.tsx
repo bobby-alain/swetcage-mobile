@@ -2,7 +2,11 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Link, Tabs } from "expo-router";
 import { Pressable, useColorScheme } from "react-native";
 import Colors from "constants/Colors";
-
+import {
+  HomeIcon,
+  ArrowDownTrayIcon,
+  InformationCircleIcon,
+} from "react-native-heroicons/solid";
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
  */
@@ -26,14 +30,12 @@ export default function TabLayout() {
         name="index"
         options={{
           title: "Tab One",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <HomeIcon color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
                 {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
+                  <InformationCircleIcon
                     color={Colors[colorScheme ?? "light"].text}
                     style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
                   />
@@ -47,7 +49,7 @@ export default function TabLayout() {
         name="two"
         options={{
           title: "Tab Two",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <ArrowDownTrayIcon color={color} />,
         }}
       />
     </Tabs>
