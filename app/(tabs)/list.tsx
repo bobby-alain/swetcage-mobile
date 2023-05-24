@@ -1,17 +1,20 @@
-import { StyleSheet, Text } from "react-native";
+import { Pressable, StyleSheet } from "react-native";
 import EditScreenInfo from "components/EditScreenInfo";
-import { View } from "components/Themed";
+import { Text, View } from "components/Themed";
+import { Link } from "expo-router";
+import { InformationCircleIcon } from "react-native-heroicons/solid";
 
-export default function Home() {
+export default function List() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Home</Text>
+      <Text style={styles.title}>List</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+      <Link href="/list/1">List 1</Link>
+      <Link href="/list/2">List 2</Link>
     </View>
   );
 }

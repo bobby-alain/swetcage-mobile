@@ -1,6 +1,5 @@
 import React from "react";
-import { StyleSheet } from "react-native";
-import { Image } from "native-base";
+import { StyleSheet, Image } from "react-native";
 import Colors from "constants/Colors";
 import { ExternalLink } from "./ExternalLink";
 import { Text, View } from "./Themed";
@@ -11,7 +10,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
     <View>
       <View style={styles.getStartedContainer}>
         <View>
-          <Image source={logo} alt={"logo"} size={"sm"} />
+          <Image source={logo} alt={"logo"} style={{ width: 64, height: 64 }} />
         </View>
         <Text
           style={styles.getStartedText}
