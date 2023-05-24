@@ -2,8 +2,15 @@ import { Pressable, StyleSheet, Text } from "react-native";
 import EditScreenInfo from "components/EditScreenInfo";
 import { View } from "components/Themed";
 import { Link } from "expo-router";
+import { useQuery } from "react-query";
+import { API_KEY } from "@env";
 
 export default function Home() {
+  const { data, isLoading } = useQuery("home", async () => {
+    const res = await fetch(API_KEY);
+    return await res.json();
+  });
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Home</Text>
@@ -31,6 +38,8 @@ export default function Home() {
           </Text>
         </Pressable>
       </Link>
+
+      <Text>{isLoading ? "Loading..." : data.title}</Text>
 
       <View
         style={styles.separator}
