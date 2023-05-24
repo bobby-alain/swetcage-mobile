@@ -1,8 +1,7 @@
 import { Pressable, StyleSheet } from "react-native";
-import EditScreenInfo from "components/EditScreenInfo";
+
 import { Text, View } from "components/Themed";
 import { Link } from "expo-router";
-import { InformationCircleIcon } from "react-native-heroicons/solid";
 
 export default function List() {
   return (

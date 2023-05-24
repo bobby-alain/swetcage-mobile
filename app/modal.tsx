@@ -2,18 +2,21 @@ import { StatusBar } from "expo-status-bar";
 import { Platform, StyleSheet } from "react-native";
 import EditScreenInfo from "components/EditScreenInfo";
 import { Text, View } from "components/Themed";
+import { Link, useNavigation } from "expo-router";
 
 export default function ModalScreen() {
+  const navigation = useNavigation();
+  const isPresented = navigation.canGoBack();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Modal</Text>
+      {isPresented && <Link href="/">Dismiss</Link>}
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
       <EditScreenInfo path="app/modal.tsx" />
-
       {/* Use a light status bar on iOS to account for the black space above the modal */}
       <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
     </View>
