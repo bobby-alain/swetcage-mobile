@@ -6,8 +6,8 @@
     "baseUrl": ".",
     "paths": {
       "app/*": ["app/*"],
-      "components/*": ["components/*"],
-      "constants/*": ["constants/*"],
+      "components/*": ["app/components/*"],
+      "constants/*": ["app/constants/*"],
       "assets/*": ["assets/*"]
     }
   },

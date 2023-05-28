@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import Colors from "constants/Colors";
+import Colors from "app/constants/Colors";
 import { ExternalLink } from "./ExternalLink";
 import { Text, View } from "./Themed";
 

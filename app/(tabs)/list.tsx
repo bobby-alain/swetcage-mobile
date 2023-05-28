@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet } from "react-native";
 
-import { Text, View } from "components/Themed";
+import { Text, View } from "app/components/Themed";
 import { Link } from "expo-router";
 
 export default function List() {
